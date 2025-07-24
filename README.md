@@ -127,7 +127,9 @@ The AI Resume Critiquer provides feedback on:
 
 ```
 project2/
-├── main.py              # Main Streamlit application
+├── main.py              # Main Streamlit application (UI only)
+├── resume_processor.py  # File handling and text extraction
+├── ai_analyzer.py       # OpenAI integration and analysis
 ├── pyproject.toml       # Project dependencies and metadata
 ├── .env                 # Environment variables (not in git)
 ├── .gitignore          # Git ignore rules
@@ -135,6 +137,20 @@ project2/
 ├── uv.lock             # Dependency lock file
 └── README.md           # This file
 ```
+
+## 🏗️ Code Architecture
+
+The application follows a clean separation of concerns:
+
+- **`main.py`**: Streamlit UI components and user interaction flow
+- **`resume_processor.py`**: File upload handling, text extraction from PDF/TXT files
+- **`ai_analyzer.py`**: OpenAI client initialization and resume analysis logic
+
+This modular structure makes the code:
+
+- Easy to maintain and extend
+- Simple to test individual components
+- Clear separation between UI and business logic
 
 ## 🔒 Security & Privacy
 
@@ -201,18 +217,17 @@ streamlit run main.py --server.runOnSave true
 
 ### Adding New Features
 
-The codebase is structured to easily add new analysis features:
+The modular codebase makes it easy to add new features:
 
-1. Modify the prompt in [`main.py`](main.py) to include new analysis aspects
-2. Update the UI to collect additional user inputs
-3. Enhance the response formatting for new feedback categories
+1. **New file types**: Extend `resume_processor.py` with additional extraction methods
+2. **Enhanced analysis**: Modify the prompt in `ai_analyzer.py` or add new analysis methods
+3. **UI improvements**: Update `main.py` for new user interface elements
+4. **New AI models**: Easily swap models in the `ResumeAnalyzer` class
 
 ## 📈 Future Enhancements
 
 - [ ] Support for DOCX files
 - [ ] Resume scoring system
-- [ ] Industry-specific analysis templates
-- [ ] Before/after comparison feature
 - [ ] Export analysis results to PDF
 - [ ] Multiple language support
 - [ ] Resume template suggestions

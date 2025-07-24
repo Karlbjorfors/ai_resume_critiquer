@@ -21,15 +21,44 @@ An intelligent resume analysis tool built with Streamlit and OpenAI that provide
 ## 📋 Prerequisites
 
 - Python 3.11+
-- OpenAI API key with available credits
+- OpenAI API key with available credits [Get it](https://platform.openai.com/)
 - Git (for cloning)
+- **uv** (recommended for dependency management) - [Installation guide](https://docs.astral.sh/uv/getting-started/installation/)
+
+### Installing uv
+
+**Windows (PowerShell):**
+
+```powershell
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+```
+
+**macOS and Linux:**
+
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+**Using pip:**
+
+```bash
+pip install uv
+```
+
+**Using pipx:**
+
+```bash
+pipx install uv
+```
+
+For more installation options and troubleshooting, visit the [official uv installation guide](https://docs.astral.sh/uv/getting-started/installation/).
 
 ## 🔧 Installation
 
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/yourusername/ai-resume-critiquer.git
+   git clone https://github.com/Karlbjorfors/ai_resume_critiquer.git
    cd ai-resume-critiquer
    ```
 
@@ -57,7 +86,7 @@ An intelligent resume analysis tool built with Streamlit and OpenAI that provide
 1. **Start the Streamlit application**
 
    ```bash
-   streamlit run main.py
+   uv run streamlit run main.py
    ```
 
 2. **Use the application**
@@ -199,11 +228,6 @@ The codebase is structured to easily add new analysis features:
 ## 📝 License
 
 This project is open source and available under the [MIT License](LICENSE).
-
-## 📧 Contact
-
-- GitHub: [@yourusername](https://github.com/yourusername)
-- Project Link: [https://github.com/yourusername/ai-resume-critiquer](https://github.com/yourusername/ai-resume-critiquer)
 
 ---
 
